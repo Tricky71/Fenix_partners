@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $('.slick-wrapper').slick({
   slidesToShow: 5,
   slidesToScroll: 1,
+  autoplay: true,
   infinite: true,
   arrows: false,
   dots: true,
@@ -48,7 +49,7 @@ $('.slick-wrapper').slick({
       }}, {
       breakpoint: 300,
       settings: {
-         settings: "unslick" // destroys slick
+        settings: "unslick" // destroys slick
       }
       
     }]
