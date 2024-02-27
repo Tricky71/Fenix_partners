@@ -1,0 +1,142 @@
+.write {
+  padding-bottom: 70px;
+}
+
+.write__title {
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.write__top {
+  margin-bottom: 30px;
+  & p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.write__form {
+  & input,
+  & textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #B6B6B6;
+    &::placeholder {
+      color: #BDBDBD;
+    }
+  }
+  & p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 35px;
+    color: #BDBDBD;
+  }
+}
+
+.write__form-text {
+  & a {
+    text-decoration: underline;
+      &:hover,
+      &:active {
+        color: #000;
+      }
+  }
+}
+
+.write__file {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  color: #BDBDBD;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    content: url(../img/down.png);
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+}
+
+.write__button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:after {
+      position: absolute;
+      content: url(../img/arrow.png);
+      width: 42px;
+      height: 42px;
+      top: -12px;
+      left: 100px;
+    }
+}
+
+#input-file {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .write__title {
+    font-size: 50px;
+    line-height: 1.17;
+  }
+}
+
+@media (min-width: 968px) {
+  .write__title {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 768px) {
+  .write__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+      & textarea {
+        width: 47%;
+        height: 103px;
+      }
+  }
+  .write__form-inputs {
+    width: 47%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .write__title {
+    font-size: 120px;
+    line-height: 1.17;
+  }
+
+  .write__form-wrapper {
+    justify-content: flex-start;
+    & textarea {
+      width: 31%;
+    }
+
+    .write__form-inputs {
+      width: 31%;
+      margin-right: 45px;
+    }
+  }
+}
