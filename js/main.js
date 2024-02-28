@@ -59,16 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
         settings: {
           slidesToShow: 3,
           dots: false,
-        }}, {
-        breakpoint: 300,
-        settings: {
-          settings: "unslick" // destroys slick
-        }
-      }],
+        }}],
   });
 
   $('.info-block__wrapper--2').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -78,7 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
     pauseOnHover: false,
     responsive: [{
         breakpoint: 1400,
-        settings: "unslick"
+        // settings: "unslick"
+         settings: {
+          slidesToShow: 4,
+          }
         },
         {
         breakpoint: 968,
@@ -86,13 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
           slidesToShow: 2,
           dots: false,
           autoplay: true
-        }}, {
-        breakpoint: 300,
-        settings: {
-          settings: "unslick" // destroys slick
-        }
-        
-      }],
+        }}],
       // mobileFirst: true
   });
 

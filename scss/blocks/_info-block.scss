@@ -104,6 +104,7 @@
 .info-block__wrapper {
   margin: 0;
   padding: 0;
+  // display: flex;
 }
 
 .info-block__slider-item {
@@ -135,6 +136,12 @@
   .info-block__wrapper {
     &--2 {
        display: flex;
+       & .slick-track {
+          width: 100% !important;
+          & .slick-active {
+            width: 200px !important;
+          }
+        }
     }
   }
 }
