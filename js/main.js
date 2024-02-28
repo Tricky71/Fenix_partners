@@ -1,36 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-  const closeBtn = document.querySelector('.info-block__close');
-  const openBtn = document.querySelector('.partner-card__link');
+  const closeBtns = document.querySelectorAll('.info-block__close');
+  const openBtns = document.querySelectorAll('.partner-card__link');
   const modal= document.querySelector('.main-modal');
   const overlay = document.querySelector('.overlay');
   const body1 = document.querySelector('body');
 
-  const openModal = function() {
+  function openMod(i) {
+    let modal = document.getElementsByClassName('main-modal')[i];
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
     body1.style.overflowY = 'hidden';
-  }
+  };
 
-  const closeModal = function() {
+  function closeMod(i) {
+    let modal = document.getElementsByClassName('main-modal')[i];
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
     body1.style.overflowY = 'visible';
-  }
+  };
 
-  openBtn.addEventListener('click', () => {
-    // modal.classList.remove('hidden');
-    // overlay.classList.remove('hidden');
-    // body1.style.overflowY = 'hidden';
-    openModal();
+  openBtns.forEach((el, i) => {
+    el.addEventListener('click', function(){
+      openMod(i);
+    })
   });
 
-  closeBtn.addEventListener('click', () => {
-    // modal.classList.add('hidden');
-    // overlay.classList.add('hidden');
-    // body1.style.overflowY = 'visible';
-    closeModal();
-  });
+  closeBtns.forEach((el, i) => {
+    el.addEventListener('click', function(){
+      closeMod(i);
+    })
+  })
 
   overlay.addEventListener('click', (evt) => {
     if (evt.target == overlay) {
@@ -41,35 +41,63 @@ document.addEventListener('DOMContentLoaded', function() {
   });  
 
 
+  $('.info-block__wrapper--1').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    responsive: [{
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 5,
+        }}, {
+        breakpoint: 968,
+        settings: {
+          slidesToShow: 3,
+          dots: false,
+        }}, {
+        breakpoint: 300,
+        settings: {
+          settings: "unslick" // destroys slick
+        }
+      }],
+  });
+
+  $('.info-block__wrapper--2').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    responsive: [{
+        breakpoint: 1400,
+        settings: "unslick"
+        },
+        {
+        breakpoint: 968,
+        settings: {
+          slidesToShow: 2,
+          dots: false,
+          autoplay: true
+        }}, {
+        breakpoint: 300,
+        settings: {
+          settings: "unslick" // destroys slick
+        }
+        
+      }],
+      // mobileFirst: true
+  });
 
 });
 
-$('.info-block__wrapper--1').slick({
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: true,
-  infinite: true,
-  arrows: false,
-  dots: true,
-  pauseOnHover: false,
-  responsive: [{
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 5,
-      }}, {
-      breakpoint: 968,
-      settings: {
-        slidesToShow: 3,
-        dots: false,
-      }}, {
-      breakpoint: 300,
-      settings: {
-        settings: "unslick" // destroys slick
-      }
-      
-    }]
-
-});
 
 
 

@@ -131,6 +131,12 @@
         line-height: 32px;
       }
   }
+
+  .info-block__wrapper {
+    &--2 {
+       display: flex;
+    }
+  }
 }
 
 @media (min-width: 1400px) {
