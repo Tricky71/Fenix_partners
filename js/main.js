@@ -6,16 +6,30 @@ document.addEventListener('DOMContentLoaded', function() {
   const overlay = document.querySelector('.overlay');
   const body1 = document.querySelector('body');
 
-  openBtn.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
+  const openModal = function() {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
     body1.style.overflowY = 'hidden';
+  }
+
+  const closeModal = function() {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+    body1.style.overflowY = 'visible';
+  }
+
+  openBtn.addEventListener('click', () => {
+    // modal.classList.remove('hidden');
+    // overlay.classList.remove('hidden');
+    // body1.style.overflowY = 'hidden';
+    openModal();
   });
 
   closeBtn.addEventListener('click', () => {
-    modal.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
-    body1.style.overflowY = 'visible';
+    // modal.classList.add('hidden');
+    // overlay.classList.add('hidden');
+    // body1.style.overflowY = 'visible';
+    closeModal();
   });
 
   overlay.addEventListener('click', (evt) => {
@@ -30,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-$('.slick-wrapper').slick({
+$('.info-block__wrapper--1').slick({
   slidesToShow: 5,
   slidesToScroll: 1,
   autoplay: true,
@@ -46,6 +60,7 @@ $('.slick-wrapper').slick({
       breakpoint: 968,
       settings: {
         slidesToShow: 3,
+        dots: false,
       }}, {
       breakpoint: 300,
       settings: {
