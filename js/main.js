@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
-  overlay.addEventListener('click', (evt) => {
-    if (evt.target == overlay) {
-      modal.classList.add('hidden');
-      overlay.classList.add('hidden');
-      body1.style.overflowY = 'visible';
-    }
-  });  
+  // overlay.addEventListener('click', (evt) => {
+  //   if (evt.target == overlay) {
+  //     modal.classList.add('hidden');
+  //     overlay.classList.add('hidden');
+  //     body1.style.overflowY = 'visible';
+  //   }
+  // });  
 
 
   $('.info-block__wrapper--1').slick({

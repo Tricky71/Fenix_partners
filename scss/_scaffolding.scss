@@ -47,7 +47,8 @@ input[type="radio"].visually-hidden {
 }
 
 .hidden {
-  display: none;
+  // display: none;
+  visibility: hidden;
 }
 
 a {
